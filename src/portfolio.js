@@ -38,21 +38,27 @@ const projects = [
     sourceCode: 'https://github.com/liamkuny/TpComida',
   },
   {
-    name: 'GameStoreData(back end)',
+    name: 'App turistica para extranjeros',
     description:
-      'GameStoreData is able to let user retrieve the game from database based on its year and category',
-    stack: ['Java 8', 'MySQL', 'React'],
-    sourceCode: 'https://github.com/stone-com/Resource-Planner',
+      'Esta app esta echa para extranjeros que deciden venir a conoces el pais, donde les muestra los disitntos lugares turisticos, da informacion de colectivos y otras ayudas para manejarse en nuestro pais',
+    stack: ['MVC', 'MySQL', 'Axios'],
+    sourceCode: 'https://github.com/liamkuny/Tp09_Kuniewsky_Grimberg.git',
     
   },
   {
-    name: 'Music Store(back end)',
+    name: 'Juego adivina las banderas',
     description:
-      'MusicStore is able to direct user to the desired page based on its endpoints by track, album,artist and label',
-    stack: ['html-css-javascript', 'sequelize', 'React'],
-    sourceCode: 'https://github.com/Morganbb104/M7-project2-musictore-recommendations-Huang_Chengchien',
-    livePreview: 'https://cheng32-musicstore-catalog.herokuapp.com/track',
+      'Esta es un videojuego el cual consta en adivinar la bandera que se muestra en pantalla, poniendo a prueba el conocimiento del jugador a nivel internacional. Se puede utilizar tanto en computadora como en telefono ',
+    stack: ['CSS', 'axios', 'React'],
+    sourceCode: 'https://github.com/liamkuny/Tp-Banderas.git',
   },
+  {
+    name: 'Pagina de venta de libros',
+    description:
+      'Esta es una pagina de venta de libros, donde los padres podran meterse para comprar libros a sus hijos, o mismo publicar si lo quieren vender. Esta pagina todavia no estac en uso pero esperamos que pronto salga al mundo ',
+    stack: ['Sql', 'axios', 'React', 'node'],
+    sourceCode: 'https://github.com/MatiasBurecovics/ProyectoFinal.git',
+  }
 ]
 
 const skills = [
