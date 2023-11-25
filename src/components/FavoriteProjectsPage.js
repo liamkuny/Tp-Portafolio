@@ -4,25 +4,37 @@ import { projects } from '../portfolio';
 import './FavoriteProjectsPage.css';
 
 const FavoriteProjectsPage = () => {
-  const [favoriteProjects, setFavoriteProjects] = useState(
-    JSON.parse(localStorage.getItem('favoriteProjects')) || []
-  );
+  const [favoriteProjects, setFavoriteProjects] = useState([]);
 
-  const handleFavoriteToggle = (projectId) => {
-    const updatedFavorites = [...favoriteProjects];
-
-    if (updatedFavorites.includes(projectId)) {
-      updatedFavorites.splice(updatedFavorites.indexOf(projectId), 1);
-    } else {
-      updatedFavorites.push(projectId);
-    }
-
-    localStorage.setItem('favoriteProjects', JSON.stringify(updatedFavorites));
-    setFavoriteProjects(updatedFavorites);
+  // Get favorite projects based on local storage
+  const getFavoriteProjects = () => {
+    const favoriteProjectIds = JSON.parse(localStorage.getItem('favoriteProjects')) || [];
+    const filteredProjects = projects.filter((project) => {
+      const projectName = project.name;
+      return favoriteProjectIds.includes(projectName);
+    });
+    return filteredProjects.map((project) => ({
+      id: project.id,
+      name: project.name,
+      title: project.name,
+      description: project.description,
+    }));
   };
 
-  const getFavoriteProjectsDetails = () => {
-    return projects.filter((project) => favoriteProjects.includes(project.id));
+  // Handle favorite toggle
+  const handleFavoriteToggle = (projectId) => {
+    const updatedFavoriteProjects = [...favoriteProjects];
+
+    if (updatedFavoriteProjects.includes(projectId)) {
+      updatedFavoriteProjects.splice(updatedFavoriteProjects.indexOf(projectId), 1);
+    } else {
+      updatedFavoriteProjects.push(projectId);
+    }
+
+    setFavoriteProjects(updatedFavoriteProjects);
+
+    // Update local storage
+    localStorage.setItem('favoriteProjects', JSON.stringify(updatedFavoriteProjects));
   };
 
   return (
@@ -34,7 +46,7 @@ const FavoriteProjectsPage = () => {
       </div>
 
       <div className="favorite-projects-list">
-        {getFavoriteProjectsDetails().map((project) => (
+        {getFavoriteProjects().map((project) => (
           <div key={project.id} className="favorite-project-card">
             <h3 className="favorite-project-title">{project.title}</h3>
             <p className="favorite-project-description">{project.description}</p>
@@ -43,7 +55,7 @@ const FavoriteProjectsPage = () => {
               onClick={() => handleFavoriteToggle(project.id)}
               className="favorite-project-toggle-btn"
             >
-              {favoriteProjects.includes(project.id) ? 'Remove from Favorites' : 'Add to Favorites'}
+              {favoriteProjects.includes(project.id) ? 'remove from favorites' : 'Sacar de favoritos' }
             </button>
           </div>
         ))}
