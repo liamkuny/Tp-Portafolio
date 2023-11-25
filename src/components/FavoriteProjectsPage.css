@@ -1,0 +1,78 @@
+/* FavoriteProjectsPage.css */
+.favorite-projects-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .back-to-projects-btn-container {
+    margin-bottom: 20px;
+  }
+  
+  .back-to-projects-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0366d6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-to-projects-btn:hover {
+    background-color: #003366;
+  }
+  
+  .favorite-projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .favorite-project-card {
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .favorite-project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .favorite-project-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .favorite-project-description {
+    font-size: 1rem;
+    color: #586069;
+    margin-bottom: 10px;
+  }
+  
+  .favorite-project-toggle-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #0366d6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .favorite-project-toggle-btn:hover {
+    background-color: #003366;
+  }
+  
+  
